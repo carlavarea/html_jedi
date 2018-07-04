@@ -4,18 +4,21 @@
 		<meta charset="utf-8">
 		<title>Curriculum</title>
 		<style>
-			table, tr, td, th{ border-collapse: collapse;}
+			.info, #prof{ border-collapse: collapse;}
+			#prof{ text-align: left; border:0px solid black;}
+			.languages, tr, td, th{ border-collapse: collapse;}
 			td, th{ text-align: center; border:1px solid black; width: 20%;}
 			body, div{font-family: verdana; font-size: 15px}
 		</style>
 	</head>
 	<body>
-		<button href="#bottom">Go to bottom</button>
-		<br>
+		<form action="#bottom">
+    		<input type="submit" value="Go to bottom" />
+		</form>
 		<div>
-			<table id="info">
-				<h3>Basic information</h3>
-				<td>
+			<h3>Basic information</h3>
+			<table class="info">
+				<td id="prof">
 					<b>Full name: </b><span>Carla Varea Parra</span><br>
 					<b>Address: </b><span>Carrer Malaga nº20, 08710 Santa Margarida de Montbui, Barcelona, Spain</span><br>
 					<b>E-mail: </b><span>carla.varea@est.fib.upc.edu</span><br>
@@ -23,10 +26,10 @@
 					<b>Mobile: </b><span>+34649145064</span><br>
 					<b>Date of birth: </b><span>03/14/1996</span><br>
 				</td>
-				<td>
-					AQUI VA MI JEPETO
+				<td id="prof">
+					<img src="https://i.imgflip.com/152kbc.jpg" alt="Profile picture" width="250" position="center">
 				</td>
-			</table>
+			</table>	
 		</div>
 		<div>
 			<h4>Video-curriculum</h4>
@@ -34,10 +37,29 @@
 		</div>
 		<div>
 			<h3>Education, goals and qualities</h3>
+			<p>
+				<h4>Education</h4>
+				<span>Grau en Enginyeria informàtica - Universitat Politècnica de Barcelona</span><br>
+				<span>Batxillerat - INS Pere Vives Vich</span><br>
+				<span>ESO - INS Pere Vives Vich</span><br>
+			</p>
+			<p>
+				<h4>Goals</h4>
+				<span>Passar-me la FIB</span><br>
+				<span>Aconseguir els dos crèdits que em falten amb aquest curs :D</span><br>
+				<span>Life is a meme</span>
+			</p>
+			<p>
+				<h4>Qualities</h4>
+				<span>Puntual</span><br>
+				<span>Treball en equip</span><br>
+				<span><b>Enviar memes</b></span><br>
+				<span>Ganes d'apendre</span><br>
+			</p>
 		</div>
 		<div>
 			<h3>Languages</h3>
-			<table id="leng">
+			<table class="languages">
 				<tr>
 					<th>Lenguage</th>
 					<th>Writing Skill</th>
@@ -60,7 +82,10 @@
 				</tr>
 			</table>
 		</div>
+		<br>
 		<a id="bottom"></a>
-		<button href="#">Go to top</button>
+		<form action="#">
+    		<input type="submit" value="Go to top" />
+		</form>
 	</body>
 </html>
