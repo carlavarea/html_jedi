@@ -8,7 +8,6 @@
     justify-content: center;
   	margin: 0;
 }
-
 #bender {
   	height: 100%;
   	width: 100%;
@@ -17,7 +16,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
 #antena{
 	display: flex;
 	flex-direction: column;
@@ -45,7 +43,6 @@
 	content: "";
 	margin-top: -2px;
 }
-
 #cabeza{
 	display: flex;
 	flex-direction: column;
@@ -67,7 +64,6 @@
 	margin-top: -130px;
 	border-radius: 5%;
 }
-
 #visor {
   	height: 125px;
 	width: 350px;  
@@ -80,7 +76,6 @@
 	position: absolute;
 	top: 325px;
 }
-
 #visor-borde {
 	height: 102px;
 	width: 326px; 
@@ -92,7 +87,6 @@
 	top: 325px;
 	z-index: 2;
 }
-
 .ojos {
 	height: 135px;
 	width: 135px;
@@ -100,7 +94,6 @@
 	justify-content: center;
 	align-items: center;
 }
-
 .ojos:first-child {
   	margin-right: 8px;
 }
@@ -112,7 +105,6 @@
   position: relative;
   z-index: 1;
 }
-
 #pupila-left {
   	height: 30px;
  	width: 30px;
@@ -122,7 +114,6 @@
     top: 60px;
   	z-index: 1;
 }
-
 #pupila-right {
   	height: 30px;
   	width: 30px;
@@ -132,7 +123,6 @@
 	top: 60px;
   	z-index: 1;
 }
-
 #boca {
   	height: 75px;
  	width: 225px;
@@ -143,24 +133,20 @@
     top: 515px;
   	z-index: 2;
 }
-
 #boca-columns {
   	display: flex;
     align-items: center;
     justify-content: space-around;
 }
-
 .boca-vertical {
   	height: 115px;
   	width: 32px;
   	background-color: #fffcd3;
   	border-right: 6px solid slategray;
 }
-
 .boca-vertical:last-child {
   	border-right: 0;
 }
-
 #boca-horizontal {
   	height: 25px;
   	width: 225px;
