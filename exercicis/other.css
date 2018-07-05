@@ -1,0 +1,18 @@
+div{
+	margin-top: 20px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px;
+	box-sizing: border-box;
+}
+
+#font{
+	margin-left: 20px;
+	font-family: verdana;
+	font-size: 15px;
+	text-shadow: 2px 2px;
+}
+#spaces{
+	margin-left: 20px;
+	letter-spacing: 5px;
+}
