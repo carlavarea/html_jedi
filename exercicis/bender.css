@@ -1,6 +1,171 @@
-html, body {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+.container {
+  	height: 100%;
+	min-height: 100%;
+  	width: 100%;
+  	box-sizing: border-box;
+  	display: flex;
+    align-items: center;
+    justify-content: center;
+  	margin: 0;
+}
+
+#bender {
+  	height: 100%;
+  	width: 100%;
+  	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#antena{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#bola {
+  	height: 40px;
+  	width: 40px;
+  	background-color: lightgrey;
+    border-radius: 50%;
+}
+#palo {
+	height: 125px;
+	width: 20px;
+	background-color: lightgrey;
+	content: "";
+	margin-top: -2px;
+}
+#base {
+  	height: 65px;
+  	width: 100px;
+  	background-color: lightgrey;
+    border-radius: 50%;
+	content: "";
+	margin-top: -2px;
+}
+
+#cabeza{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	top: 185px;
+	position: absolute;
+}
+#cabeza-top {
+	height: 255px;
+	width: 255px;
+	background-color: lightgray;
+	border-radius: 100%;
+}
+#cabeza-bottom{
+	height: 350px;
+	width: 255px;
+	background-color: lightgray;
+	margin-top: -130px;
+	border-radius: 5%;
+}
+
+#visor {
+  	height: 125px;
+	width: 350px;  
+	background-color:black;
+    border-radius: 75px;
+  	display: flex;
+    flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 325px;
+}
+
+#visor-borde {
+	height: 102px;
+	width: 326px; 
+	background-color: transparent;
+	border-radius: 75px;
+	border: 12px solid slategray;
+  	content: "";
+	position: absolute;
+	top: 325px;
+	z-index: 2;
+}
+
+.ojos {
+	height: 135px;
+	width: 135px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ojos:first-child {
+  	margin-right: 8px;
+}
+.ojo {
+  height: 125px;
+  width: 135px;
+  background-color: #fffcd3;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+#pupila-left {
+  	height: 30px;
+ 	width: 30px;
+  	background-color: slategray;
+  	position: absolute;
+    left: 100px;
+    top: 60px;
+  	z-index: 1;
+}
+
+#pupila-right {
+  	height: 30px;
+  	width: 30px;
+  	background-color: slategray;
+  	position: absolute;
+	right: 100px;
+	top: 60px;
+  	z-index: 1;
+}
+
+#boca {
+  	height: 75px;
+ 	width: 225px;
+  	border: 8px solid slategray;
+	border-radius: 80px;
+  	overflow: hidden;
+  	position: absolute;
+    top: 515px;
+  	z-index: 2;
+}
+
+#boca-columns {
+  	display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.boca-vertical {
+  	height: 115px;
+  	width: 32px;
+  	background-color: #fffcd3;
+  	border-right: 6px solid slategray;
+}
+
+.boca-vertical:last-child {
+  	border-right: 0;
+}
+
+#boca-horizontal {
+  	height: 25px;
+  	width: 225px;
+  	border-bottom: 5px solid slategray;
+  	border-top: 5px solid slategray;
+  	position: absolute;
+    top: 22px;
 }
