@@ -4,8 +4,22 @@
 		<meta charset="utf-8">
 		<title> Mix </title>
 		<script type="text/javascript" src="mix.js"></script>
+		<link rel="stylesheet" type="text/css" href="mix.css">
 	</head>
-	<body>
-		
+	<body onload="setInterval('showTime()',1000)">
+		<div class="container">
+			<header class="header">
+				<img class="slider" name="slider" src="blue.png">
+				<span id="clock"></span>
+			</header>
+			<section class="section">
+				<span id="text">Enter text here:</span> 
+				<input type="text" name="text" id="myText" oninput="change_value()">
+				<span id="textResult"></span>
+			</section>
+			<footer class="footer">
+				<div></div>
+			</footer>
+		</div>
 	</body>
 </html>
