@@ -3,29 +3,13 @@
 	<head> 
 		<meta charset="utf-8">
 		<title> Carrousel </title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<script type="text/javascript" src="carrousel.js"></script>
 	</head>
 	<body>
-		 <!-- Slideshow container -->
-		<div class="slideshow-container">
-  			<!-- Full-width images with number and caption text -->
-  			<div class="mySlides fade">
-    			<div class="numbertext">1 / 3</div>
-    			<img src="red.png" style="width:100%">
-    			<div class="text">Caption Text</div>
-  			</div>
-
-		  	<div class="mySlides fade">
-		    	<div class="numbertext">2 / 3</div>
-		    	<img src="green.png" style="width:100%">
-		    	<div class="text">Caption Two</div>
-		  	</div>
-
-	  		<div class="mySlides fade">
-	    		<div class="numbertext">3 / 3</div>
-	    		<img src="blue.png" style="width:100%">
-	    		<div class="text">Caption Three</div>
-	  		</div>
-		</div> 
+		<img name="slider" src="blue.png">
+		<br>
+		<button class="prev" onclick="plusSlides(-1)">Prev</button>
+  		<button class="next" onclick="plusSlides(1)">Next</button>
 	</body>
 </html>
