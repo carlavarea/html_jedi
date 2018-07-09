@@ -16,6 +16,7 @@ var direction = [{t: 0, b: 0, l: 1, r: 0}]
 function initizalize(){
 	var cv = document.getElementById("container");
 	ctx = cv.getContext("2d");
+	direction.push({t: 0, b: 0, l: 1, r: 0});
 	updateFruit();
 	updateSnake();
 	window.onkeydown(function(new_event){
@@ -50,6 +51,10 @@ function draw(x,y,color){
 	ctx.rect(x,y,size,size);
 	ctx.fillStyle = color;
 	ctx.fill();
+}
+
+function update(){
+
 }
 
 window.onload = initizalize;
