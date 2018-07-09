@@ -11,9 +11,28 @@ td, th{
 	border:1px solid black; 
 	width: 20%;
 }
+button{
+	border: none;
+    color: white;
+    font-size: 15px;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+	background-color: #660033;
+}
 .container{
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	width: 800px;
+}
+.footer{
+	display: flex;
+	flex-direction: row;
 	justify-content: center;
 	margin: 0 auto;
 	width: 800px;
@@ -27,6 +46,9 @@ td, th{
 	width: 800px;
 }
 #video{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	position: relative;
 	align-self: center;
 	width: 800px;
@@ -45,8 +67,5 @@ td, th{
 	align-self: center;
 }
 #image{
-	align-self: center;
-}
-#vid{
 	align-self: center;
 }
