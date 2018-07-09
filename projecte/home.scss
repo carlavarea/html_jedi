@@ -11,10 +11,10 @@ td, th{
 	border:1px solid black; 
 	width: 20%;
 }
-button{
+a{
+    -moz-appearance: button;
 	border: none;
     color: white;
-    font-size: 15px;
     padding: 10px 30px;
     text-align: center;
     text-decoration: none;
@@ -22,6 +22,7 @@ button{
     margin: 4px 2px;
     cursor: pointer;
 	background-color: #660033;
+	width:100px;
 }
 .container{
 	display: flex;
