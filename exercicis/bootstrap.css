@@ -1,0 +1,16 @@
+#col1{
+	background-color:yellow;
+	grid-column: 1 / span 3;
+}
+#col2{
+	background-color:red;
+	grid-column: 1 / span 1;
+}
+#col3{
+	background-color:white;
+	grid-column: 1 / span 1;
+}
+.col-md-4{
+	height: 40px;
+	content: " ";
+}
