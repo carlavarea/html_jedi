@@ -22,18 +22,23 @@ function initizalize(){
 	window.onkeydown(function(new_event){
 		var key = new_event.keyCode
 		if(key == 37){ //left
+			direction = [];
 			direction.push({t: 0, b: 0, l: 1, r: 0});
 		}
 		else if(key == 38){ //up
+			direction = [];
 			direction.push({t: 1, b: 0, l: 0, r: 0});
 		}
 		else if(key == 39){ //right
+			direction = [];
 			direction.push({t: 0, b: 0, l: 0, r: 1});
 		}
 		else if(key == 40){ //down
+			direction = [];
 			direction.push({t: 0, b: 1, l: 0, r: 0});
 		}
 	});
+	setInterval(update(),10);
 }
 
 function updateFruit(){
@@ -43,6 +48,8 @@ function updateFruit(){
 }
 
 function updateSnake(){
+	var current_pos = [{cx: sx, cy: sy}];
+	
 	draw(sx,sy,"black");
 }
 
@@ -54,7 +61,15 @@ function draw(x,y,color){
 }
 
 function update(){
-
+	ctx.clearRect(0,0,WIDTH,HEIGHT); //clear the screen
+	if(sx == fx && sy == fy){
+		updateFruit();
+		++parts;
+	}
+	else{
+		draw(fx, fy, "red");
+	}
+	updateSnake();
 }
 
 window.onload = initizalize;
