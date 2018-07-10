@@ -3,3 +3,33 @@ html, body{
 	font-family: verdana; 
 	font-size: 15px;
 }
+a{
+    -moz-appearance: button;
+	border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+	background-color: #660033;
+	width:100px;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	width: 800px;
+}
+.header{
+	align-self: right;
+}
+.footer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0 auto;
+	width: 800px;
+}
