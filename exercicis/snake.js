@@ -10,7 +10,7 @@ var size = 20;
 var parts = 1;
 var iteration;
 var direction = [{u: 0, d: 0, l: 0, r: 1}] //up, down, left, right
-
+var current_pos = [{cx: sx, cy: sy}];
 
 function initizalize(){
 	var cv = document.getElementById("container");
@@ -28,10 +28,15 @@ function updateFruit(){
 }
 
 function updateSnake(){
-	var current_pos = [{cx: sx, cy: sy}]; //current position
+	//current_pos = [{cx: sx, cy: sy}]; //current position
+	console.log("mida: " + current_pos.length);
+	if(current_pos.length != parts){
+		current_pos.push({cx: sx, cy: sy});
+		console.log("he afegit: " + sx + " " + sy);
+	}
 	//next position
 	if(parts > 1){
-		for(i = 0; i < parts; ++i){
+		for(i = 0; i < parts; i++){
 			//update parts of the snake
 			if(direction[0].u == 1){ //up
 				current_pos[i].cy = current_pos[i].cy-size_shead;
@@ -46,9 +51,11 @@ function updateSnake(){
 				sx = current_pos[i].cx;
 			}
 			else{ //right
-				current_pos[0].cx = current_pos[i].cx+size_shead;
+				current_pos[i].cx = current_pos[i].cx+size_shead;
 				sx = current_pos[i].cx;
 			} 
+			current_pos[i] = ({cx: sx, cy: sy});
+			draw(current_pos[i].cx,current_pos[i].cy,"black");
 		}
 	}
 	else{
@@ -68,15 +75,9 @@ function updateSnake(){
 			current_pos[0].cx = current_pos[0].cx+size_shead;
 			sx = current_pos[0].cx;
 		}
-	}
-	//mirem a veure si hi ha alguna part nova
-	/*if(current_pos.lenght != parts){
-
-	}
-	else{
+		current_pos[0] = ({cx: sx, cy: sy});
 		draw(current_pos[0].cx,current_pos[0].cy,"black");
-	}*/
-	draw(current_pos[0].cx,current_pos[0].cy,"black");
+	}
 }
 
 function draw(x,y,color){
@@ -89,7 +90,6 @@ function draw(x,y,color){
 function update(){
 	ctx.clearRect(0,0,WIDTH,HEIGHT); //clear the screen
 	console.log("snake pos: " + sx + " " + sy);
-	console.log("fruit pos: " + fx + " " + fy);
 	if(sx == fx && sy == fy){
 		++parts;
 		updateFruit();
