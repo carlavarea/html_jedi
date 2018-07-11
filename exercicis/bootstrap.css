@@ -1,16 +1,104 @@
 #col1{
-	background-color:yellow;
-	grid-column: 1 / span 3;
+	background-color: white; 
+	height: 240px;
 }
 #col2{
-	background-color:red;
-	grid-column: 1 / span 1;
+	background-color: black; 
+	height: 240px;
 }
 #col3{
-	background-color:white;
-	grid-column: 1 / span 1;
+	background-color: red; 
+	height: 240px;
 }
-.col-md-4{
-	height: 40px;
-	content: " ";
+#col4{
+	background-color: black; 
+	height: 15px;
+}
+#col5{
+	background-color: black; 
+	height: 15px;
+}
+#col6{
+	background-color: red; 
+	height: 15px;
+}
+#col7{
+	background-color: white; 
+	height: 325px;
+}
+#col8{
+	background-color: black; 
+	height: 325px;
+}
+#col9{
+	background-color: red; 
+	height: 325px;
+}
+#col10{
+	background-color: black; 
+	height: 15px;
+}
+#col11{
+	background-color: black; 
+	height: 15px;
+}
+#col12{
+	background-color: black; 
+	height: 15px;
+}
+#col13{
+	background-color: blue; 
+	height: 110px;
+}
+#col14{
+	background-color: black; 
+	height: 110px;
+}
+#col15{
+	background-color: white; 
+	height: 110px;
+}
+#col16{
+	background-color: black; 
+	height: 110px;
+}
+#col17{
+	background-color: white; 
+	height: 110px;
+}
+#col18{
+	background-color: blue; 
+	height: 15px;
+}
+#col19{
+	background-color: black; 
+	height: 15px;
+}
+#col20{
+	background-color: white; 
+	height: 15px;
+}
+#col21{
+	background-color: black; 
+	height: 15px;
+}
+#col22{
+	background-color: blue; 
+	height: 110px;
+}
+#col23{
+	background-color: black; 
+	height: 110px;
+}
+#col24{
+	background-color: white; 
+	height: 110px;
+}
+#col25{
+	background-color: black; 
+	height: 110px;
+}
+#col26{
+	background-color: yellow; 
+	height: 110px;
 }
