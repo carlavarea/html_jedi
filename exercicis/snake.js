@@ -10,34 +10,38 @@ var ctx;
 var size = 20;
 var parts = 1;
 var iteration;
-var direction = [{t: 0, b: 0, l: 1, r: 0}]
+var direction = [{u: 0, d: 0, l: 1, r: 0}] //up, down, left, right
 
 
 function initizalize(){
 	var cv = document.getElementById("container");
 	ctx = cv.getContext("2d");
-	direction.push({t: 0, b: 0, l: 1, r: 0});
+	direction.push({u: 0, d: 0, l: 1, r: 0});
 	updateFruit();
 	updateSnake();
-	window.onkeydown(function(new_event){
+	window.onkeydown = function(new_event){
 		var key = new_event.keyCode
 		if(key == 37){ //left
 			direction = [];
-			direction.push({t: 0, b: 0, l: 1, r: 0});
+			direction.push({u: 0, d: 0, l: 1, r: 0});
+			console.log("direction left: " + direction[0].l);
 		}
 		else if(key == 38){ //up
 			direction = [];
-			direction.push({t: 1, b: 0, l: 0, r: 0});
+			direction.push({u: 1, d: 0, l: 0, r: 0});
+			console.log("direction up: " + direction[0].u);
 		}
 		else if(key == 39){ //right
 			direction = [];
-			direction.push({t: 0, b: 0, l: 0, r: 1});
+			direction.push({u: 0, d: 0, l: 0, r: 1});
+			console.log("direction right: " + direction[0].r);
 		}
 		else if(key == 40){ //down
 			direction = [];
-			direction.push({t: 0, b: 1, l: 0, r: 0});
+			direction.push({u: 0, d: 1, l: 0, r: 0});
+			console.log("direction down: " + direction[0].d);
 		}
-	});
+	}
 	setInterval(update(),10);
 }
 
@@ -48,8 +52,21 @@ function updateFruit(){
 }
 
 function updateSnake(){
-	var current_pos = [{cx: sx, cy: sy}];
-	
+	var current_pos = [{cx: sx, cy: sy}]; //current position
+	if(parts > 1){
+		for(i = 0; i < parts; ++i){
+			//update parts of the snake 
+		}
+	}
+	else{
+		
+	}
+	/*if(new part){
+
+	}
+	else{
+
+	}*/
 	draw(sx,sy,"black");
 }
 
