@@ -14,13 +14,27 @@ var old_posy = 0;
 var new_posx;
 var new_posy;
 var positions = [{cx: sx, cy: sy}]; //posicio inicial del cap
+var gameover;
 
+function reset(){
+	sx = 0; //la posicio del cap
+	sy = 0; //la posicio del cap
+	fx = 0;
+	fy = 0;
+	parts = 1;
+	direction = [{u: 0, d: 0, l: 0, r: 1}]; //up, down, left, right
+	old_posx = 0;
+	old_posy = 0;
+	positions = [{cx: sx, cy: sy}]; //posicio inicial del cap
+}
 
 function initizalize(){
+	reset();
 	var cv = document.getElementById("container");
 	ctx = cv.getContext("2d");
 	updateFruit(); //pinto fruita
 	draw(sx,sy,"black"); //pinto pos inicial snake
+	document.getElementById("btn").disabled = true;
 	iteration = setInterval(update, 100);
 }
 
@@ -86,7 +100,7 @@ function draw(x,y,color){
 
 function update(){
 	ctx.clearRect(0,0,WIDTH,HEIGHT); //clear the screen
-	console.log("snake pos: " + sx + " " + sy);
+	//actu
 	if(sx == fx && sy == fy){
 		++parts;
 		updateFruit();
@@ -95,10 +109,33 @@ function update(){
 		draw(fx, fy, "red");
 	}
 	updateSnake();
+
+	//condicions de game over
+	if(sx == WIDTH || sx < 0 || sy == HEIGHT || sy < 0){ //estic fora del mapa
+		gameover=true;
+		console.log("m'he sortit del mapa");
+	}
+	for(i = 1; i < positions.length; i++){
+		if(sx == positions[i].cx && sy == positions[i].cy){
+			gameover=true;
+			console.log("m'he menjat a mi mateix");
+			break;
+		}
+	}
+	if(gameover){
+		clearInterval(iteration);
+		alert("GAME OVER");
+		document.getElementById("btn").disabled = false;
+		ctx.clearRect(0,0,WIDTH,HEIGHT);
+	}
 }
 
 window.onload = function(){
-	initizalize();
+	//initizalize();
+	document.getElementById("btn").onclick = function(){
+		gameover = false;
+		initizalize();
+	}
 	window.onkeydown = function(new_event){
 		var key = new_event.keyCode
 		if(key == 37){ //left
