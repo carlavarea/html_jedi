@@ -2,7 +2,7 @@ var sx = 0;
 var sy = 0;
 var fx = 0;
 var fy = 0;
-var size_shead = 10; //in pixels
+var size_shead = 20; //in pixels
 var WIDTH = 500;
 var HEIGHT = 500;
 var ctx;
@@ -10,7 +10,8 @@ var size = 20;
 var parts = 1;
 var iteration;
 var direction = [{u: 0, d: 0, l: 0, r: 1}] //up, down, left, right
-var current_pos = [{cx: sx, cy: sy}];
+var positions = [{cx: sx, cy: sy}];
+var new_pos = [];
 
 function initizalize(){
 	var cv = document.getElementById("container");
@@ -24,59 +25,75 @@ function initizalize(){
 function updateFruit(){
 	fx = Math.floor(Math.random()*(((WIDTH-size)/size)+1)) * size;
 	fy = Math.floor(Math.random()*(((HEIGHT-size)/size)+1)) * size;
+	//fx = fy = 100;
 	draw(fx, fy, "red");
 }
 
 function updateSnake(){
-	//current_pos = [{cx: sx, cy: sy}]; //current position
-	console.log("mida: " + current_pos.length);
-	if(current_pos.length != parts){
-		current_pos.push({cx: sx, cy: sy});
-		console.log("he afegit: " + sx + " " + sy);
-	}
+	aux = [{ax: sx, ay: sy}]; //current position
+	console.log("aux: " + aux[0].ax + " " + aux[0].ay);
+	new_pos = 
 	//next position
 	if(parts > 1){
-		for(i = 0; i < parts; i++){
+		for(i = 1; i < positions.length; i++){
 			//update parts of the snake
 			if(direction[0].u == 1){ //up
-				current_pos[i].cy = current_pos[i].cy-size_shead;
-				sy = current_pos[i].cy;
+				positions[i].cy = positions[i].cy-size_shead;
+				sy = positions[i].cy;
 			}
 			else if(direction[0].d == 1){ //down
-				current_pos[i].cy = current_pos[i].cy+size_shead;
-				sy = current_pos[i].cy;
+				positions[i].cy = positions[i].cy+size_shead;
+				sy = positions[i].cy;
 			}
 			else if(direction[0].l == 1){ //left
-				current_pos[i].cx = current_pos[i].cx-size_shead;
-				sx = current_pos[i].cx;
+				positions[i].cx = positions[i].cx-size_shead;
+				sx = positions[i].cx;
 			}
 			else{ //right
-				current_pos[i].cx = current_pos[i].cx+size_shead;
-				sx = current_pos[i].cx;
+				positions[i].cx = positions[i].cx+size_shead;
+				sx = positions[i].cx;
 			} 
-			current_pos[i] = ({cx: sx, cy: sy});
-			draw(current_pos[i].cx,current_pos[i].cy,"black");
+			positions[i] = ({cx: sx, cy: sy});
+			draw(positions[i].cx,positions[i].cy,"black");
+			console.log("estic pintant: " + positions[i].cx + " " + positions[i].cy);
+		
+			/*if(direction[0].u == 1){ //up
+			}
+			else if(direction[0].d == 1){ //down
+			}
+			else if(direction[0].l == 1){ //left
+			}
+			else{ //right
+			} */
 		}
 	}
 	else{
 		if(direction[0].u == 1){ //up
-			current_pos[0].cy = current_pos[0].cy-size_shead;
-			sy = current_pos[0].cy;
+			positions[0].cy = positions[0].cy-size_shead;
+			sy = positions[0].cy;
 		}
 		else if(direction[0].d == 1){ //down
-			current_pos[0].cy = current_pos[0].cy+size_shead;
-			sy = current_pos[0].cy;
+			positions[0].cy = positions[0].cy+size_shead;
+			sy = positions[0].cy;
 		}
 		else if(direction[0].l == 1){ //left
-			current_pos[0].cx = current_pos[0].cx-size_shead;
-			sx = current_pos[0].cx;
+			positions[0].cx = positions[0].cx-size_shead;
+			sx = positions[0].cx;
 		}
 		else{ //right
-			current_pos[0].cx = current_pos[0].cx+size_shead;
-			sx = current_pos[0].cx;
+			positions[0].cx = positions[0].cx+size_shead;
+			sx = positions[0].cx;
 		}
-		current_pos[0] = ({cx: sx, cy: sy});
-		draw(current_pos[0].cx,current_pos[0].cy,"black");
+		positions[0] = ({cx: sx, cy: sy});
+		draw(positions[0].cx,positions[0].cy,"black");
+	}
+	
+	console.log("mida: " + positions.length);
+	if(positions.length != parts){
+		positions.push({cx: aux[0].ax, cy: aux[0].ay});
+		console.log("he afegit: " + aux[0].ax + " " + aux[0].ay);
+		draw(aux[0].ax, aux[0].ay, "black");
+		aux = [];
 	}
 }
 
