@@ -8,84 +8,73 @@ var ctx;
 var size = 20; //increment de cada quadrat
 var parts = 1;
 var iteration;
-var direction = [{u: 0, d: 0, l: 0, r: 1}] //up, down, left, right
+var direction = [{u: 0, d: 0, l: 0, r: 1}]; //up, down, left, right
+var old_posx = 0;
+var old_posy = 0;
+var new_posx;
+var new_posy;
 var positions = [{cx: sx, cy: sy}]; //posicio inicial del cap
 
 
 function initizalize(){
 	var cv = document.getElementById("container");
 	ctx = cv.getContext("2d");
-	direction.push({u: 0, d: 0, l: 0, r: 1});
-	updateFruit();
-	updateSnake();
+	updateFruit(); //pinto fruita
+	draw(sx,sy,"black"); //pinto pos inicial snake
 	iteration = setInterval(update, 100);
 }
 
 function updateFruit(){
 	fx = Math.floor(Math.random()*(((WIDTH-size)/size)+1)) * size;
 	fy = Math.floor(Math.random()*(((HEIGHT-size)/size)+1)) * size;
-	//fx = fy = 100;
 	draw(fx, fy, "red");
-	//draw(fx+120, fy, "red");
-	//draw(fx+180, fy, "red");
 }
 
 function updateSnake(){
-	aux = [{ax: sx, ay: sy}]; //current position
-	console.log("aux: " + aux[0].ax + " " + aux[0].ay);
-	 
-	//next position
-	if(positions.length > 1){
-		for(i = 0; i < positions.length; i++){
-			//update parts of the snake
-			if(direction[0].u == 1){ //up
-				positions[i].cy = positions[i].cy-size;
-				sy = positions[i].cy;
-				aux[0].ay -=(parts*size)
-			}
-			else if(direction[0].d == 1){ //down
-				positions[i].cy = positions[i].cy+size;
-				sy = positions[i].cy;
-				aux[0].ay +=(parts*size)
-			}
-			else if(direction[0].l == 1){ //left
-				positions[i].cx = positions[i].cx-size;
-				sx = positions[i].cx;
-				aux[0].ax -=(parts*size)
-			}
-			else{ //right
-				positions[i].cx = positions[i].cx+size;
-				sx = positions[i].cx;
-				aux[0].ax +=(parts*size)
-			} 
-			positions[i] = ({cx: sx, cy: sy});
-			draw(positions[i].cx,positions[i].cy,"black");
-			console.log("estic pintant: " + positions[i].cx + " " + positions[i].cy);
-		}
+	old_posx = sx; //current position cap
+	old_posy = sy;
+	new_posx = old_posx;
+	new_posy = old_posy;
+	//calcular nova posicio
+	if(direction[0].u == 1){ //up
+		new_posy -= size;
+		positions[0].cy = sy = new_posy;
 	}
-	else{
-		if(direction[0].u == 1){ //up
-			sy -= size;
-		}
-		else if(direction[0].d == 1){ //down
-			sy += size;
-		}
-		else if(direction[0].l == 1){ //left
-			sx -=size;
-		}
-		else{ //right
-			sx += size;
-		}
-		draw(sx,sy,"black");
+	else if(direction[0].d == 1){ //down
+		new_posy += size;
+		positions[0].cy = sy = new_posy;
 	}
-	
-	console.log("mida: " + positions.length);
+	else if(direction[0].l == 1){ //left
+		new_posx -=size;
+		positions[0].cx = sx = new_posx;
+	}
+	else{ //right
+		new_posx += size;
+		positions[0].cx = sx = new_posx;
+	}
+	//pintar head 
+	draw(new_posx,new_posy,"black");
+	//afegir elem cua
 	if(positions.length != parts){
-		positions.push({cx: aux[0].ax, cy: aux[0].ay});
-		console.log("he afegit: " + aux[0].ax + " " + aux[0].ay);
-		draw(aux[0].ax, aux[0].ay, "black");
+		positions.push({cx: old_posx, cy: old_posy});
 		aux = [];
 	}
+	//Actualitzar posicions
+	for(i = 1; i < positions.length; i++){
+		//pos inicial abans d'actualitzar
+		old_posxB = positions[i].cx;
+		old_posyB = positions[i].cy;
+		//nova posicio
+		new_posxB = old_posx;
+		new_posyB = old_posy;
+		//guardem la nova pos
+		positions[i].cx = new_posxB;
+		positions[i].cy = new_posyB;
+		//deixem la posicio old preparada per al seguent element
+		old_posx = old_posxB
+		old_posy = old_posyB;
+		draw(positions[i].cx,positions[i].cy,"black");
+	}	
 }
 
 function draw(x,y,color){
