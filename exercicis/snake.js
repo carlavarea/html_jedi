@@ -1,17 +1,16 @@
-var sx = 0;
-var sy = 0;
+var sx = 0; //la posicio del cap
+var sy = 0; //la posicio del cap
 var fx = 0;
 var fy = 0;
-var size_shead = 20; //in pixels
 var WIDTH = 500;
 var HEIGHT = 500;
 var ctx;
-var size = 20;
+var size = 20; //increment de cada quadrat
 var parts = 1;
 var iteration;
 var direction = [{u: 0, d: 0, l: 0, r: 1}] //up, down, left, right
-var positions = [{cx: sx, cy: sy}];
-var new_pos = [];
+var positions = [{cx: sx, cy: sy}]; //posicio inicial del cap
+
 
 function initizalize(){
 	var cv = document.getElementById("container");
@@ -27,65 +26,57 @@ function updateFruit(){
 	fy = Math.floor(Math.random()*(((HEIGHT-size)/size)+1)) * size;
 	//fx = fy = 100;
 	draw(fx, fy, "red");
+	//draw(fx+120, fy, "red");
+	//draw(fx+180, fy, "red");
 }
 
 function updateSnake(){
 	aux = [{ax: sx, ay: sy}]; //current position
 	console.log("aux: " + aux[0].ax + " " + aux[0].ay);
-	new_pos = 
+	 
 	//next position
-	if(parts > 1){
-		for(i = 1; i < positions.length; i++){
+	if(positions.length > 1){
+		for(i = 0; i < positions.length; i++){
 			//update parts of the snake
 			if(direction[0].u == 1){ //up
-				positions[i].cy = positions[i].cy-size_shead;
+				positions[i].cy = positions[i].cy-size;
 				sy = positions[i].cy;
+				aux[0].ay -=(parts*size)
 			}
 			else if(direction[0].d == 1){ //down
-				positions[i].cy = positions[i].cy+size_shead;
+				positions[i].cy = positions[i].cy+size;
 				sy = positions[i].cy;
+				aux[0].ay +=(parts*size)
 			}
 			else if(direction[0].l == 1){ //left
-				positions[i].cx = positions[i].cx-size_shead;
+				positions[i].cx = positions[i].cx-size;
 				sx = positions[i].cx;
+				aux[0].ax -=(parts*size)
 			}
 			else{ //right
-				positions[i].cx = positions[i].cx+size_shead;
+				positions[i].cx = positions[i].cx+size;
 				sx = positions[i].cx;
+				aux[0].ax +=(parts*size)
 			} 
 			positions[i] = ({cx: sx, cy: sy});
 			draw(positions[i].cx,positions[i].cy,"black");
 			console.log("estic pintant: " + positions[i].cx + " " + positions[i].cy);
-		
-			/*if(direction[0].u == 1){ //up
-			}
-			else if(direction[0].d == 1){ //down
-			}
-			else if(direction[0].l == 1){ //left
-			}
-			else{ //right
-			} */
 		}
 	}
 	else{
 		if(direction[0].u == 1){ //up
-			positions[0].cy = positions[0].cy-size_shead;
-			sy = positions[0].cy;
+			sy -= size;
 		}
 		else if(direction[0].d == 1){ //down
-			positions[0].cy = positions[0].cy+size_shead;
-			sy = positions[0].cy;
+			sy += size;
 		}
 		else if(direction[0].l == 1){ //left
-			positions[0].cx = positions[0].cx-size_shead;
-			sx = positions[0].cx;
+			sx -=size;
 		}
 		else{ //right
-			positions[0].cx = positions[0].cx+size_shead;
-			sx = positions[0].cx;
+			sx += size;
 		}
-		positions[0] = ({cx: sx, cy: sy});
-		draw(positions[0].cx,positions[0].cy,"black");
+		draw(sx,sy,"black");
 	}
 	
 	console.log("mida: " + positions.length);
