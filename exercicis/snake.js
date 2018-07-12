@@ -124,7 +124,7 @@ function update(){
 	}
 	if(gameover){
 		clearInterval(iteration);
-		alert("GAME OVER");
+		alert("GAME OVER - Score: " + (parts-1)*10);
 		document.getElementById("btn").disabled = false;
 		ctx.clearRect(0,0,WIDTH,HEIGHT);
 	}
