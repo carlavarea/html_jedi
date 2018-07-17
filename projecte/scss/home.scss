@@ -1,0 +1,129 @@
+//colors
+$background_color: #ff99bb;
+$button_color: #660033;
+
+//font
+$font: 'verdana';
+
+//@extend-elements
+%bodyhtml {
+	background-color: $background_color;
+	font-family: $font;
+	font-size: 15px;
+}
+
+%tdth {
+	text-align: center;
+	border: 1px solid black;
+	width: 20%;
+}
+
+html {
+
+  body {
+    @extend %bodyhtml;
+  }
+
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+  width: 800px;
+
+  #informacio {
+    position: relative;
+    align-self: center;
+    width: 800px;
+
+    .info {
+      display: flex;
+      #text {
+
+        align-self: center;
+      }
+
+      #image {
+        align-self: center;
+      }
+
+    }
+
+  }
+
+  #video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    align-self: center;
+    width: 800px;
+  }
+
+  #formacio {
+    position: relative;
+    align-self: center;
+    width: 800px;
+  }
+
+  #idiomes {
+    position: relative;
+    align-self: center;
+    width: 800px;
+
+    table {
+      border-collapse: collapse;
+
+      tr {
+        border-collapse: collapse;
+
+        td {
+          border-collapse: collapse;
+          @extend %tdth;
+        }
+
+        th {
+          border-collapse: collapse;
+          @extend %tdth;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	width: 800px;
+	align-items: right;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0 auto;
+  width: 800px;
+
+  a {
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: $button_color;
+    width: 100px;
+  }
+  
+}

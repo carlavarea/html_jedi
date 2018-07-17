@@ -1,80 +1,92 @@
-html, body{
-	background-color: #ff99bb;
-	font-family: verdana; 
-	font-size: 15px;
+html body {
+  background-color: #ff99bb;
+  font-family: "verdana";
+  font-size: 15px;
 }
-table, tr, td, th{ 
-	border-collapse: collapse;
+
+.container #idiomes table tr td, .container #idiomes table tr th {
+  text-align: center;
+  border: 1px solid black;
+  width: 20%;
 }
-td, th{ 
-	text-align: center; 
-	border:1px solid black; 
-	width: 20%;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 800px;
 }
-a{
-    -moz-appearance: button;
-	border: none;
-    color: white;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-	background-color: #660033;
-	width:100px;
+.container #informacio {
+  position: relative;
+  align-self: center;
+  width: 800px;
 }
-.container{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-	width: 800px;
+.container #informacio .info {
+  display: flex;
 }
-.header{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-	width: 800px;
-	align-items: right
+.container #informacio .info #text {
+  align-self: center;
 }
-.footer{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin: 0 auto;
-	width: 800px;
+.container #informacio .info #image {
+  align-self: center;
 }
-.info{
-	display: flex;
+.container #video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  align-self: center;
+  width: 800px;
 }
-#informacio{
-	position: relative;
-	align-self: center;
-	width: 800px;
+.container #formacio {
+  position: relative;
+  align-self: center;
+  width: 800px;
 }
-#video{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
-	align-self: center;
-	width: 800px;
+.container #idiomes {
+  position: relative;
+  align-self: center;
+  width: 800px;
 }
-#formacio{
-	position: relative;
-	align-self: center;
-	width: 800px;
+.container #idiomes table {
+  border-collapse: collapse;
 }
-#idiomes{
-	position: relative;
-	align-self: center;
-	width: 800px;
+.container #idiomes table tr {
+  border-collapse: collapse;
 }
-#text{
-	align-self: center;
+.container #idiomes table tr td {
+  border-collapse: collapse;
 }
-#image{
-	align-self: center;
+.container #idiomes table tr th {
+  border-collapse: collapse;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 800px;
+  align-items: right;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  width: 800px;
+}
+.footer a {
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #660033;
+  width: 100px;
 }
