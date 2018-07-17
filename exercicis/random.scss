@@ -1,0 +1,262 @@
+//colors
+$red: #d61831;
+$brown: #beb295;
+$blue: #297db5;
+$cararra: #eeedea;
+$ziggurat: #c0dae9;
+$white: white;
+$celeste: #d0d1cc;
+$gray: #808080;
+$yellow: #fed45e;
+$link_water: #d5e6f0;
+
+//urls
+$url_0: url(../imatges/salaOrdinadors.jpg);
+$url_1: url(../imatges/Cantonada_grisa_esquerra.gif);
+$url_2: url(../imatges/Botonet_llistats.gif);
+$url_3: url(../imatges/Bola_vermella.gif);
+$url_4: url(../imatges/Cantonada_blanca_fons_gris.gif);
+
+//@extend-elements
+%ul {
+	padding: 0;
+	margin: 0;
+	list-style-image: $url_2;
+	padding-left: 20px;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+
+#container {
+	height: 50%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+td {
+	font-size: 10pt;
+}
+th {
+	font-size: 10pt;
+}
+h1 {
+	color: $red;
+}
+h2 {
+	font-size: 10pt;
+	text-align: left;
+}
+#foto-alumne {
+	display: block;
+	img {
+		height: 100px;
+	}
+}
+#cap_estreta {
+	background-color: $brown;
+	height: 55px;
+	#logo {
+		height: 55px;
+	}
+	#foto-raco {
+		background-image: $url_0;
+		background-repeat: no-repeat;
+		background-position: 200px top;
+		height: 55px;
+		width: 1300px;
+	}
+}
+#logout {
+	float: right;
+	width: 12em;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+#info-alumne {
+	background-color: $brown;
+	background-image: $url_1;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	padding: 1em;
+	margin-bottom: 1em;
+	padding: 0 1em 1em;
+}
+h4 {
+	color: $blue;
+	margin: 0;
+}
+.dadaAlumne {
+	margin-top: 1em;
+	font-weight: bold;
+}
+#contingut {
+	top: 0;
+	left: 0;
+}
+#contingutsensedreta {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	margin-left: 16em;
+	margin-right: 1em;
+	padding-bottom: 1em;
+	font-size: 10pt;
+	ul {
+		@extend %ul;
+	}
+}
+#cosAvis {
+	background-color: $white;
+	margin: 0;
+	padding: 1em;
+	ul {
+		@extend %ul;
+	}
+}
+.texto_agenda {
+	color: $blue;
+}
+.texto_agenda2 {
+	font-weight: bold;
+	color: $brown;
+}
+main {
+	height: 50%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.event {
+	background-image: none;
+}
+#caixetes {
+	width: 33%;
+}
+article {
+	height: 50%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.llista_noticies {
+	padding-top: 1em;
+}
+.llista_avisos {
+	padding-top: 1em;
+}
+.text_noticia {
+	background-image: $url_3;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	color: $gray;
+	font-weight: bold;
+}
+.postit {
+	padding-left: 20px;
+}
+.postit_grup {
+	padding-top: 1em;
+}
+.noticia_assig {
+	padding-bottom: 1em;
+	h2 {
+		padding: 0;
+		padding-left: 20px;
+	}
+}
+.marc_postit {
+	background-image: $url_4;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	padding: 1em;
+	padding-bottom: 20px;
+	background-color: $white;
+}
+section {
+	height: 50%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.horaris {
+	table {
+		border-spacing: 0;
+		border-collapse: collapse;
+		width: 99%;
+	}
+	td {
+		background-color: transparent;
+		border: 1px solid $blue;
+		border-left: 0;
+		border-top: 0;
+	}
+	.notaAssig {
+		border: 0;
+	}
+	th {
+		background-color: $link_water;
+		font-weight: bold;
+		color: $blue;
+		text-align: center;
+		vertical-align: middle;
+	}
+}
+#menu h2 {
+	margin: 0 0 0 4px;
+	padding: 0 0 0 20px;
+}
+#dreta li {
+	list-style-type: none;
+	list-style-position: outside;
+	padding: 0;
+	margin: 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+.calendariMes td {
+	width: 2em;
+	text-align: center;
+	background-color: $cararra;
+	padding: 2px;
+	font-size: 80%;
+	font-weight: bold;
+	&.calendariNomMes {
+		padding-left: 0.5em;
+		width: auto;
+		text-transform: lowercase;
+		background-color: $ziggurat;
+		color: $white;
+		text-align: left;
+		font-size: 100%;
+	}
+	&.calendariDiaSetmana {
+		color: $blue;
+		background-color: $celeste;
+		font-weight: normal;
+	}
+	&.diaAnterior {
+		color: $gray;
+		background-color: $cararra;
+	}
+	&.diaFutur {
+		color: $gray;
+		background-color: $cararra;
+	}
+	&.festa {
+		color: $red;
+		background-color: $cararra;
+	}
+	&.event {
+		color: $white;
+		background-color: $blue;
+	}
+	&.avui {
+		background-color: $yellow;
+	}
+}
+*/#caixetes {
+	width: 25%;
+}
