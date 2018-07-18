@@ -137,7 +137,7 @@ window.onload = function(){
     setInterval('showTime()',1000);
 
 	document.getElementById("btn").onclick = function(){
-		gameover = false;
+		gameover = false; 
 		initizalize();
 	}
 	window.onkeydown = function(new_event){
