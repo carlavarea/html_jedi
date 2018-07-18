@@ -1,6 +1,8 @@
 //colors
 $background_color: #ff99bb;
 $button_color: #660033;
+$white: white;
+$black: black;
 
 //font
 $font: 'verdana';
@@ -14,7 +16,7 @@ $font: 'verdana';
 
 %tdth {
 	text-align: center;
-	border: 1px solid black;
+	border: 1px solid $black;
 	width: 20%;
 }
 
@@ -115,7 +117,7 @@ html {
 
   a {
     border: none;
-    color: white;
+    color: $white;
     padding: 10px 30px;
     text-align: center;
     text-decoration: none;

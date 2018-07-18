@@ -1,6 +1,10 @@
 //colors
 $background_color: #ff99bb;
 $button_color: #660033;
+$button_color_disabled: #301c26;
+$white: white;
+$black: black;
+$background_snake: #e767a3;
 
 //fonts
 $font: 'verdana';
@@ -10,12 +14,13 @@ $font: 'verdana';
 	background-color: $background_color;
 	font-family: $font;
 	font-size: 15px;
+	color: $black;
 }
 
 html {
 
     body {
-      @extend %bodyhtml;
+	  @extend %bodyhtml;
     }
   
 }
@@ -26,6 +31,48 @@ html {
 	justify-content: center;
 	margin: 0 auto;
 	width: 800px;
+	align-items: center;
+
+	#game{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: $font;
+		font-size: 15px;
+
+		#container{
+			border: 2px solid $black;
+			width: 500px;
+			height: 500px;
+			background-color: $background_snake;
+		}
+
+		#btn{
+			background-color: $button_color;
+			border: none;
+			color: $white;
+			padding: 10px 30px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			margin: 2%;
+			cursor: pointer;
+			background-color: $button_color;
+			width: 100px;
+		}
+
+		#btn:disabled{
+			background-color: $button_color_disabled;
+		}
+
+	}
+
+	#memes{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+			
 }
 .header {
 	display: flex;
@@ -44,7 +91,7 @@ html {
 
     a {
         border: none;
-        color: white;
+        color: $white;
         padding: 10px 30px;
         text-align: center;
         text-decoration: none;
@@ -52,7 +99,8 @@ html {
         margin: 4px 2px;
         cursor: pointer;
         background-color: $button_color;
-        width: 100px;
+		width: 160px;
+		height: 40px;
     }
     
 }
