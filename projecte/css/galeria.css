@@ -9,7 +9,30 @@ html body {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+}
+.container #container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  height: 100%;
+  margin-top: 50px;
   width: 800px;
+}
+.container #container > div {
+  margin: 5px 10px 0 0;
+}
+.container #container > div > img {
+  transform: translateZ(0);
+  transition: transform .5s;
+}
+.container #container > div:hover {
+  z-index: 1;
+}
+.container #container > div:hover > img {
+  transform: scale(2, 2);
+  transition: transform .7s;
 }
 
 .header {

@@ -24,3 +24,24 @@ function showTime(){
     document.getElementById("date").innerText = data;
     document.getElementById("date").textContent = data;
 }
+
+function open_links(id){
+    if(id == 1){
+        console.log("hola soc 1");
+    }
+    else if(id == 2){
+        console.log("hola soc 2");
+    }
+    else if(id == 3){
+        console.log("hola soc 3");
+    }
+    else if(id == 4){
+        console.log("hola soc 4");
+    }
+    else if(id == 5){
+        console.log("hola soc 5");
+    }
+    else{
+        console.log("hola soc 6");
+    }
+}

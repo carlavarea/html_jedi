@@ -3,6 +3,7 @@ $background_color: #ff99bb;
 $button_color: #660033;
 $white: white;
 $black: black;
+$mercury: #e5e5e5;
 
 //fonts
 $font: 'verdana';
@@ -27,7 +28,39 @@ html {
 	flex-direction: column;
 	justify-content: center;
 	margin: 0 auto;
-	width: 800px;
+
+	#container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		height: 100%;
+		margin-top: 50px;
+		width: 800px;
+
+		> div {
+			margin: 5px 10px 0 0;
+
+			> img {
+				transform: translateZ(0);
+				transition: transform .5s;
+			}
+
+			&:hover {
+				z-index: 1;
+
+				> img {
+					transform: scale(2,2);
+					transition: transform .7s;
+				}
+
+			}
+
+		}
+
+	}
+
 }
 .header {
 	display: flex;
