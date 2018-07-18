@@ -1,0 +1,58 @@
+//colors
+$background_color: #ff99bb;
+$button_color: #660033;
+
+//fonts
+$font: 'verdana';
+
+//@extend-elements
+%bodyhtml {
+	background-color: $background_color;
+	font-family: $font;
+	font-size: 15px;
+}
+
+html {
+
+    body {
+      @extend %bodyhtml;
+    }
+  
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	width: 800px;
+}
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	width: 800px;
+	align-items: right;
+}
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0 auto;
+    width: 800px;
+
+    a {
+        border: none;
+        color: white;
+        padding: 10px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: $button_color;
+        width: 100px;
+    }
+    
+}
