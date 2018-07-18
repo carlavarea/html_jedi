@@ -26,22 +26,32 @@ function showTime(){
 }
 
 function open_links(id){
-    if(id == 1){
-        console.log("hola soc 1");
+    if(id == 1){ //bender
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/bender.html");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/bender.css");
     }
-    else if(id == 2){
-        console.log("hola soc 2");
+    else if(id == 2){ //bootstrap
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/bootstrap.html");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/bootstrap.css");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/bootstrap-dog.html");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/bootstrap-cat.html");
     }
-    else if(id == 3){
-        console.log("hola soc 3");
+    else if(id == 3){ //clock
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/clock.html");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/clock.js");
     }
-    else if(id == 4){
-        console.log("hola soc 4");
+    else if(id == 4){ //mix
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/mix.html");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/mix.css");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/mix.js");
     }
-    else if(id == 5){
-        console.log("hola soc 5");
+    else if(id == 5){ //poketable
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/poketable.html");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/poketable.js");
     }
-    else{
-        console.log("hola soc 6");
+    else{ //snake
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/snake.html");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/snake.css");
+        window.open("https://github.com/carlavarea/html_jedi/blob/master/exercicis/snake.js");
     }
 }
