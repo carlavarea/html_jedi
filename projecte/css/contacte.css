@@ -22,7 +22,7 @@ input, textarea {
   margin: 0 auto;
   width: 400px;
   padding: 1em;
-  border: 1px solid #660033;
+  border: 2px solid #660033;
   border-radius: 1em;
 }
 .container form div + div {
