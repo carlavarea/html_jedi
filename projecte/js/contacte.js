@@ -26,5 +26,10 @@ function showTime(){
 }
 
 function form_alert(){
-    alert("Thank you! Your message has been sent successfully :D");
+    if(document.getElementById("name").value != "" && document.getElementById("mail").value != "" && document.getElementById("msg").value != ""){
+        alert("Thank you! Your message has been sent successfully :D");
+    }
+    else{
+        alert("Oops! You missed something :(");
+    }
 }
