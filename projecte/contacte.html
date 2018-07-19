@@ -12,11 +12,24 @@
 			<span id="clock"></span>
 		</header>
 		<main class="container">
-			<h2>Login</h2>
-			<form action="/formulari.js">
-				Username: <input type="username" name="username" placeholder="your username here"><br>
-				Password: <input type="password" name="pass" placeholder="your password here"><br><br>
-				<input type="submit" name="submit" value="Submit">
+			<h2>Contact Page :)</h2>
+			<form>
+				<div>
+					<label for="name">Name:</label>
+					<input type="text" id="name" />
+				</div>
+				<div>
+					<label for="mail">E-mail:</label>
+					<input type="email" id="mail" />
+				</div>
+				<div>
+					<label for="msg">Message:</label>
+					<textarea id="msg"></textarea>
+				</div>
+				
+				<div class="button">
+					<button id="btn" type="submit" onclick="form_alert()">Send your message</button>
+				</div>
 			</form>
 		</main>
 		<br><br>

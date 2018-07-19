@@ -4,12 +4,29 @@ html body {
   font-size: 15px;
 }
 
+input, textarea {
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #660033;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   width: 800px;
+  align-items: center;
+}
+.container form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #660033;
+  border-radius: 1em;
+}
+.container form div + div {
+  margin-top: 1em;
 }
 
 .header {
@@ -39,4 +56,39 @@ html body {
   cursor: pointer;
   background-color: #660033;
   width: 100px;
+}
+
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+input:focus {
+  border-color: black;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+  resize: vertical;
+}
+textarea:focus {
+  border-color: black;
+}
+
+.button {
+  padding-left: 90px;
+}
+.button #btn {
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #660033;
+  width: 175px;
 }

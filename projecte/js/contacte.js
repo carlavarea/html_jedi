@@ -24,3 +24,7 @@ function showTime(){
     document.getElementById("date").innerText = data;
     document.getElementById("date").textContent = data;
 }
+
+function form_alert(){
+    alert("Thank you! Your message has been sent successfully :D");
+}
